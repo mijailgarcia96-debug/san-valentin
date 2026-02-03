@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Para Nallelys 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      color: #fff;
+    }
+    .card {
+      background: rgba(0,0,0,0.25);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      max-width: 360px;
+      animation: fadeIn 1.5s ease;
+    }
+    h1 {
+      font-size: 2.1em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .highlight {
+      font-style: italic;
+      opacity: 0.95;
+    }
+    .signature {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 1.05em;
+    }
+    button {
+      font-size: 1em;
+      padding: 12px 22px;
+      margin: 10px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+    .no {
+      background: #fff;
+      color: #ff4d6d;
+      position: relative;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="card">
+    <h1>💘 Nallelys 💘</h1>
+    <p>
+      Desde que llegaste, todo se siente más bonito.<br><br>
+      ¿Te gustaría ser mi San Valentín? 💕
+    </p>
+    <button class="yes" onclick="yes()">Sí 💖</button>
+    <button class="no" onclick="moveNo()">No 🙈</button>
+  </div>
+
+  <script>
+    function yes() {
+      document.getElementById("card").innerHTML = `
+        <h1>🥰 ¡Yay!</h1>
+        <p class="highlight">
+          Eres mi salvación,<br>
+          mi lugar seguro<br>
+          y mi persona favorita.
+        </p>
+        <p class="signature">Te ama, Mijail 💖</p>
+      `;
+    }
+
+    function moveNo() {
+      const btn = document.querySelector(".no");
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      btn.style.transform = \`translate(\${x}px, \${y}px)\`;
+    }
+  </script>
+
+</body>
+</html>
